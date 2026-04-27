@@ -1,4 +1,3 @@
-const openInvitationButton = document.querySelector("#openInvitationButton");
 const openInvitationCta = document.querySelector("#openInvitationCta");
 const countdownGrid = document.querySelector("#countdownGrid");
 const revealTargets = document.querySelectorAll(".reveal");
@@ -28,12 +27,11 @@ function updateCountdown() {
 }
 
 function startEnvelopeSequence() {
-  if (!openInvitationButton) {
+  if (!openInvitationCta) {
     return;
   }
 
   document.body.classList.add("invitation-opening");
-  openInvitationButton.setAttribute("aria-expanded", "true");
 
   window.setTimeout(() => {
     window.location.href = "invitation.html?opened=1";
@@ -79,7 +77,6 @@ function createPetals() {
   }
 }
 
-openInvitationButton?.addEventListener("click", startEnvelopeSequence);
 openInvitationCta?.addEventListener("click", startEnvelopeSequence);
 
 updateCountdown();
