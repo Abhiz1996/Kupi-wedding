@@ -1,4 +1,5 @@
 const openInvitationButton = document.querySelector("#openInvitationButton");
+const revealScratchButton = document.querySelector("#revealScratchButton");
 const countdownGrid = document.querySelector("#countdownGrid");
 const revealTargets = document.querySelectorAll(".reveal");
 const petalLayer = document.querySelector("#petalLayer");
@@ -17,32 +18,36 @@ function updateCountdown() {
 
   const now = new Date();
   const distance = Math.max(receptionDate.getTime() - now.getTime(), 0);
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((distance / (1000 * 60)) % 60);
-  const seconds = Math.floor((distance / 1000) % 60);
+  const values = [
+    Math.floor(distance / (1000 * 60 * 60 * 24)),
+    Math.floor((distance / (1000 * 60 * 60)) % 24),
+    Math.floor((distance / (1000 * 60)) % 60),
+    Math.floor((distance / 1000) % 60)
+  ];
 
-  [days, hours, minutes, seconds].forEach((value, index) => {
-    const slot = countdownGrid.querySelectorAll("strong")[index];
-    if (slot) {
-      slot.textContent = String(value).padStart(2, "0");
-    }
+  countdownGrid.querySelectorAll("strong").forEach((slot, index) => {
+    slot.textContent = String(values[index]).padStart(2, "0");
   });
 }
 
-function openInvitation() {
-  document.body.classList.add("invitation-opened");
-  openInvitationButton?.setAttribute("aria-expanded", "true");
+function startEnvelopeSequence() {
+  if (!openInvitationButton) {
+    return;
+  }
+
+  document.body.classList.add("invitation-opening");
+  openInvitationButton.setAttribute("aria-expanded", "true");
 
   window.setTimeout(() => {
-    document.querySelector("#invitationExperience")?.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
-  }, 650);
+    window.location.href = "invitation.html?opened=1";
+  }, 1850);
 }
 
 function setupRevealObserver() {
+  if (!revealTargets.length) {
+    return;
+  }
+
   if (!("IntersectionObserver" in window)) {
     revealTargets.forEach((target) => target.classList.add("is-visible"));
     return;
@@ -78,12 +83,21 @@ function createPetals() {
 }
 
 function revealScratchCard() {
-  scratchCardShell?.classList.add("is-revealed");
-  scratchInstruction?.classList.add("is-hidden");
+  if (!scratchCardShell || !scratchInstruction) {
+    return;
+  }
+
+  scratchCardShell.classList.add("is-revealed");
+  scratchInstruction.classList.add("is-hidden");
+
+  const context = scratchCanvas?.getContext("2d");
+  if (context && scratchCanvas) {
+    context.clearRect(0, 0, scratchCanvas.width, scratchCanvas.height);
+  }
 }
 
 function setupScratchCard() {
-  if (!scratchCanvas) {
+  if (!scratchCanvas || !scratchCardShell || !scratchInstruction) {
     return;
   }
 
@@ -139,7 +153,7 @@ function setupScratchCard() {
 
     context.globalCompositeOperation = "destination-out";
     context.beginPath();
-    context.arc(x, y, 26, 0, Math.PI * 2);
+    context.arc(x, y, 28, 0, Math.PI * 2);
     context.fill();
   };
 
@@ -153,16 +167,14 @@ function setupScratchCard() {
       }
     }
 
-    const revealedPercent = transparentPixels / (sample.length / 4);
-    if (revealedPercent > 0.42) {
-      context.clearRect(0, 0, scratchCanvas.width, scratchCanvas.height);
+    if (transparentPixels / (sample.length / 4) > 0.34) {
       revealScratchCard();
     }
   };
 
   const startScratch = (event) => {
     isDrawing = true;
-    scratchInstruction?.classList.add("is-hidden");
+    scratchInstruction.classList.add("is-hidden");
     clearAtPoint(event.clientX, event.clientY);
   };
 
@@ -191,7 +203,8 @@ function setupScratchCard() {
   scratchCanvas.addEventListener("pointerleave", stopScratch);
 }
 
-openInvitationButton?.addEventListener("click", openInvitation);
+openInvitationButton?.addEventListener("click", startEnvelopeSequence);
+revealScratchButton?.addEventListener("click", revealScratchCard);
 
 updateCountdown();
 window.setInterval(updateCountdown, 1000);

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Wedding invitation for Dr. Anand and Dr. Gopika with a scratch card reveal, countdown, and venue details."
+    >
+    <title>Dr. Anand & Dr. Gopika | Wedding Invitation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Mea+Culpa&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="wedding.css">
+  </head>
+  <body class="invitation-body content-body">
+    <div class="petal-layer" aria-hidden="true" id="petalLayer"></div>
+    <div class="backdrop-illustration" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand-mark" href="invitation.html#top">Dr. Anand &amp; Dr. Gopika</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#top">Home</a>
+        <a href="#reception">Scratch Card</a>
+        <a href="#countdown">Countdown</a>
+        <a href="#location">Location</a>
+      </nav>
+    </header>
+
+    <main class="content-main" id="top">
+      <div class="experience-shell is-live">
+        <section class="hero-card-stage reveal">
+          <div class="ornament-bar" aria-hidden="true"></div>
+          <article class="hero-card">
+            <p class="eyebrow">Sacred Union</p>
+            <div class="arched-card">
+              <div class="arch-rings" aria-hidden="true"></div>
+              <div class="crest crest-hero" aria-hidden="true">ॐ</div>
+              <p class="invite-line">Invite you to celebrate their marriage</p>
+              <h2>
+                <span>Dr. Anand</span>
+                <em>&amp;</em>
+                <span>Dr. Gopika</span>
+              </h2>
+              <p class="hero-date">Wednesday, the 17th of June, 2026</p>
+              <p class="hero-place">Liya Convention Centre, Kattakada, 10:00 AM</p>
+            </div>
+          </article>
+        </section>
+
+        <section class="reception-stage reveal" id="reception">
+          <div class="reception-copy">
+            <p class="eyebrow">Reception Ceremony</p>
+            <h3>Save The Date</h3>
+            <p>
+              Scratch the gilded card to reveal the reception details, or use the quick reveal
+              button if you are on a smaller screen.
+            </p>
+            <div class="reception-actions">
+              <a class="secondary-cta" href="#scratchCardShell">Go To Card</a>
+              <button type="button" class="primary-cta" id="revealScratchButton">
+                Reveal Instantly
+              </button>
+            </div>
+          </div>
+
+          <div class="scratch-card-shell" id="scratchCardShell">
+            <div class="scratch-underlay">
+              <p class="eyebrow">Reception Details</p>
+              <h4>Wednesday, 17 June 2026</h4>
+              <p>6:00 PM to 9:00 PM</p>
+              <p>RDR Convention Center</p>
+              <p>Edapazhanji, Trivandrum</p>
+              <a
+                class="gold-link"
+                href="https://maps.app.goo.gl/eyaeLrBUsDAbED596"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Map
+              </a>
+            </div>
+            <canvas
+              class="scratch-surface"
+              id="scratchCanvas"
+              width="900"
+              height="620"
+              aria-label="Scratch card reveal for reception details"
+            ></canvas>
+            <div class="scratch-instruction" id="scratchInstruction">
+              <span>Sparkle and scratch to reveal</span>
+              <strong>Reception Details</strong>
+              <small>Dr. Anand &amp; Dr. Gopika</small>
+            </div>
+          </div>
+        </section>
+
+        <section class="countdown-stage reveal" id="countdown">
+          <div class="section-head">
+            <p class="eyebrow">Countdown</p>
+            <h3>Celebration Begins In</h3>
+          </div>
+
+          <div class="countdown-panel">
+            <div class="countdown-grid" id="countdownGrid" aria-live="polite">
+              <div><strong>00</strong><span>Days</span></div>
+              <div><strong>00</strong><span>Hours</span></div>
+              <div><strong>00</strong><span>Minutes</span></div>
+              <div><strong>00</strong><span>Seconds</span></div>
+            </div>
+            <p class="countdown-note">Reception Date: June 17, 2026 at 6:00 PM</p>
+          </div>
+        </section>
+
+        <section class="location-stage reveal" id="location">
+          <div class="section-head">
+            <p class="eyebrow">Location</p>
+            <h3>How To Reach</h3>
+            <p>Find us at our beautiful wedding venue.</p>
+          </div>
+
+          <div class="location-grid">
+            <div class="map-card">
+              <iframe
+                title="RDR Convention Center map"
+                src="https://www.google.com/maps?q=RDR%20Convention%20Center%20Edapazhanji%20Trivandrum&z=15&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+
+            <article class="venue-card">
+              <h4>RDR Convention Center</h4>
+              <div class="venue-copy">
+                <p class="venue-label">Address</p>
+                <p>RDR Convention Center</p>
+                <p>Edapazhanji, Trivandrum</p>
+                <p>Kerala, India</p>
+              </div>
+              <a
+                class="calendar-button"
+                href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Dr.+Anand+%26+Dr.+Gopika+Wedding+Reception&dates=20260617T180000/20260617T210000&details=Join+us+for+the+wedding+reception+celebration&location=RDR+Convention+Center,+Edapazhanji,+Trivandrum"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Add to Google Calendar
+              </a>
+            </article>
+          </div>
+        </section>
+
+        <footer class="closing-note reveal">
+          <div class="crest crest-footer" aria-hidden="true">ॐ</div>
+          <h4>Dr. Anand &amp; Dr. Gopika</h4>
+          <p>June 17, 2026</p>
+          <p>Shubh Vivah • Sacred Union</p>
+          <span>With love and blessings • 2026</span>
+        </footer>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
