@@ -1016,3 +1016,237 @@ body.invitation-opening .envelope-shadow {
     transform: none;
   }
 }
+
+.opener-v2 {
+  gap: 24px;
+}
+
+.envelope-v2 {
+  position: relative;
+  width: min(100%, 560px);
+  height: 430px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.envelope-v2__shadow {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  width: 58%;
+  height: 34px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(122, 105, 57, 0.24), transparent 72%);
+}
+
+.envelope-v2__body,
+.envelope-v2__letter,
+.envelope-v2__flap,
+.envelope-v2__front,
+.envelope-v2__front-left,
+.envelope-v2__front-right,
+.envelope-v2__seal {
+  position: absolute;
+}
+
+.envelope-v2__body {
+  inset: 112px 42px 40px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, #fbf3e3, #efdeb9);
+  border: 2px solid rgba(189, 161, 93, 0.48);
+  box-shadow: 0 22px 50px rgba(164, 138, 67, 0.18);
+}
+
+.envelope-v2__letter {
+  left: 50%;
+  top: 46px;
+  width: 58%;
+  height: 260px;
+  transform: translateX(-50%);
+  z-index: 2;
+  transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.envelope-v2__paper {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-content: start;
+  justify-items: center;
+  gap: 8px;
+  padding: 24px 18px 16px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 243, 233, 0.96));
+  border: 1px solid rgba(201, 173, 98, 0.38);
+  box-shadow: 0 14px 28px rgba(172, 146, 75, 0.16);
+}
+
+.envelope-v2__eyebrow {
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.envelope-v2__name,
+.envelope-v2__ampersand {
+  font-family: var(--name-font);
+  font-style: italic;
+  line-height: 0.9;
+}
+
+.envelope-v2__name {
+  font-size: clamp(3.3rem, 6vw, 4.8rem);
+  color: var(--ink);
+}
+
+.envelope-v2__ampersand {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  color: var(--gold);
+}
+
+.envelope-v2__flap {
+  left: 42px;
+  right: 42px;
+  top: 112px;
+  height: 150px;
+  z-index: 5;
+  transform-origin: top center;
+  clip-path: polygon(0 0, 100% 0, 50% 78%);
+  background: linear-gradient(180deg, #fff8ec, #eadab8);
+  border: 2px solid rgba(189, 161, 93, 0.48);
+  transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.envelope-v2__front {
+  left: 42px;
+  right: 42px;
+  bottom: 40px;
+  height: 176px;
+  z-index: 4;
+  border-radius: 0 0 22px 22px;
+  background: linear-gradient(180deg, #f7ecdc, #e8d4ab);
+  border: 2px solid rgba(189, 161, 93, 0.48);
+}
+
+.envelope-v2__front-left,
+.envelope-v2__front-right {
+  bottom: 40px;
+  width: calc(50% - 42px);
+  height: 176px;
+  z-index: 5;
+  background: linear-gradient(180deg, #fcf3e4, #ead6ad);
+}
+
+.envelope-v2__front-left {
+  left: 42px;
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+}
+
+.envelope-v2__front-right {
+  right: 42px;
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+.envelope-v2__seal {
+  left: 50%;
+  bottom: 76px;
+  z-index: 6;
+  width: 74px;
+  height: 74px;
+  display: grid;
+  place-items: center;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: linear-gradient(180deg, #a6cfdb, #8cb8c9);
+  color: #9c7443;
+  font-family: var(--name-font);
+  font-size: 2.4rem;
+  font-style: italic;
+  box-shadow: 0 12px 24px rgba(99, 130, 142, 0.18);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+body.invitation-opening .envelope-v2__letter {
+  transform: translateX(-50%) translateY(-82px);
+}
+
+body.invitation-opening .envelope-v2__flap {
+  transform: rotateX(180deg);
+}
+
+body.invitation-opening .envelope-v2__seal {
+  opacity: 0.4;
+  transform: translateX(-50%) scale(0.84);
+}
+
+body.invitation-opening .envelope-v2__shadow {
+  transform: translateX(-50%) scale(0.92);
+}
+
+@media (max-width: 720px) {
+  .envelope-v2 {
+    height: 360px;
+  }
+
+  .envelope-v2__body {
+    inset: 96px 18px 28px;
+  }
+
+  .envelope-v2__letter {
+    top: 42px;
+    width: 64%;
+    height: 218px;
+  }
+
+  .envelope-v2__paper {
+    padding: 20px 14px 12px;
+  }
+
+  .envelope-v2__name {
+    font-size: clamp(2.8rem, 11vw, 3.9rem);
+  }
+
+  .envelope-v2__ampersand {
+    font-size: clamp(2.1rem, 8vw, 2.9rem);
+  }
+
+  .envelope-v2__flap {
+    left: 18px;
+    right: 18px;
+    top: 96px;
+    height: 126px;
+  }
+
+  .envelope-v2__front {
+    left: 18px;
+    right: 18px;
+    bottom: 28px;
+    height: 144px;
+  }
+
+  .envelope-v2__front-left,
+  .envelope-v2__front-right {
+    bottom: 28px;
+    width: calc(50% - 18px);
+    height: 144px;
+  }
+
+  .envelope-v2__front-left {
+    left: 18px;
+  }
+
+  .envelope-v2__front-right {
+    right: 18px;
+  }
+
+  .envelope-v2__seal {
+    bottom: 46px;
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+}
