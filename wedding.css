@@ -567,6 +567,10 @@ body.invitation-opening .envelope-shadow {
   white-space: nowrap;
 }
 
+.hero-time-line {
+  display: block;
+}
+
 .section-head {
   max-width: 760px;
   margin: 0 auto 26px;
@@ -1003,14 +1007,23 @@ body.invitation-opening .envelope-shadow {
   }
 
   .hero-place {
-    max-width: 15ch;
+    max-width: 100%;
     margin: 0 auto;
     font-size: clamp(1rem, 4.7vw, 1.32rem);
     line-height: 1.45;
+    text-align: center;
   }
 
   .hero-place-line {
-    display: inline-block;
+    display: block;
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  .hero-time-line {
+    display: block;
+    margin-top: 4px;
+    text-align: center;
   }
 
   .location-stage .section-head {
