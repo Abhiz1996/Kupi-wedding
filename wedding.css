@@ -119,30 +119,6 @@ body.opener-body .backdrop-illustration::after {
   animation: petal-fall linear infinite;
 }
 
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  width: min(1120px, calc(100% - 32px));
-  margin: 0 auto;
-  padding: 22px 20px 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
-  background: transparent;
-  border-bottom: 0;
-  box-shadow: none;
-  backdrop-filter: none;
-}
-
-.brand-mark {
-  font-family: "Great Vibes", cursive;
-  font-size: clamp(2.2rem, 3vw, 3.2rem);
-  color: var(--ink);
-  white-space: nowrap;
-}
-
 .opener-main,
 .content-main {
   position: relative;
@@ -869,11 +845,6 @@ body.invitation-opening .envelope-shadow {
 }
 
 @media (max-width: 980px) {
-  .site-header {
-    width: min(100% - 24px, 1120px);
-    padding: 18px 16px 6px;
-  }
-
   .opening-envelope-stage,
   .experience-shell {
     width: min(100% - 24px, 1280px);
@@ -897,10 +868,6 @@ body.invitation-opening .envelope-shadow {
 }
 
 @media (max-width: 720px) {
-  .brand-mark {
-    font-size: 2.5rem;
-  }
-
   .section-head h3,
   .reception-block h4 {
     font-size: clamp(2.6rem, 13vw, 4.1rem);
