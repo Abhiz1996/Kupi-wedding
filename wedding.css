@@ -221,20 +221,20 @@ body.opener-body .backdrop-illustration::after {
 
 .envelope-scene {
   position: relative;
-  width: min(100%, 640px);
-  padding: 16px 0 0;
+  width: min(100%, 680px);
+  padding: 8px 0 0;
   background: transparent;
 }
 
 .envelope-shadow {
   position: absolute;
   left: 50%;
-  bottom: 22px;
-  width: 68%;
-  height: 56px;
+  bottom: 10px;
+  width: 60%;
+  height: 42px;
   transform: translateX(-50%);
   border-radius: 999px;
-  background: radial-gradient(circle, rgba(117, 104, 62, 0.2), transparent 72%);
+  background: radial-gradient(circle, rgba(117, 104, 62, 0.22), transparent 72%);
   transition: transform 1.4s ease, opacity 1.4s ease;
 }
 
@@ -249,14 +249,14 @@ body.opener-body .backdrop-illustration::after {
 .opener-envelope-card {
   position: relative;
   display: block;
-  width: min(100%, 540px);
+  width: min(100%, 560px);
   margin: 0 auto;
-  padding: 0 18px 26px;
+  padding: 0 18px 34px;
 }
 
 .envelope-compact {
   width: 100%;
-  height: 430px;
+  height: 470px;
 }
 
 .envelope-letter,
@@ -268,18 +268,18 @@ body.opener-body .backdrop-illustration::after {
 }
 
 .envelope-letter {
-  inset: 34px 108px 86px;
+  inset: 18px 118px 114px;
   display: grid;
   place-items: center;
   padding: 0;
   background: linear-gradient(180deg, rgba(255, 254, 249, 0.96), rgba(249, 244, 231, 0.95));
-  border: 1px solid rgba(177, 145, 67, 0.22);
-  box-shadow: 0 18px 36px rgba(176, 153, 98, 0.14);
+  border: 1px solid rgba(177, 145, 67, 0.28);
+  box-shadow: 0 18px 36px rgba(176, 153, 98, 0.18);
   transition:
     transform 1.6s cubic-bezier(0.2, 0.8, 0.2, 1),
     opacity 1.4s ease,
     filter 1.4s ease;
-  z-index: 1;
+  z-index: 2;
 }
 
 .letter-frame {
@@ -288,7 +288,7 @@ body.opener-body .backdrop-illustration::after {
   display: grid;
   place-items: center;
   text-align: center;
-  padding: 28px 26px 34px;
+  padding: 26px 24px 32px;
   border-radius: 18px;
   border: 1px solid rgba(210, 192, 125, 0.4);
   background:
@@ -316,7 +316,7 @@ body.opener-body .backdrop-illustration::after {
 }
 
 .letter-copy strong {
-  font-size: clamp(3.8rem, 8vw, 5.8rem);
+  font-size: clamp(3.6rem, 7vw, 5.2rem);
   line-height: 0.88;
 }
 
@@ -331,25 +331,25 @@ body.opener-body .backdrop-illustration::after {
   transform-origin: top center;
   background:
     linear-gradient(180deg, rgba(255, 250, 241, 0.98), rgba(240, 229, 208, 0.95));
-  border: 1px solid rgba(203, 180, 119, 0.44);
-  clip-path: polygon(0 0, 100% 0, 50% 74%);
-  box-shadow: 0 18px 34px rgba(150, 123, 48, 0.12);
+  border: 2px solid rgba(203, 180, 119, 0.48);
+  clip-path: polygon(0 0, 100% 0, 50% 78%);
+  box-shadow: 0 18px 34px rgba(150, 123, 48, 0.14);
   transition: transform 1.25s cubic-bezier(0.19, 1, 0.22, 1);
   z-index: 4;
 }
 
 .envelope-lid-compact {
-  inset: 0 0 auto;
-  height: 202px;
-  border-radius: 30px 30px 0 0;
+  inset: 22px 28px auto;
+  height: 182px;
+  border-radius: 28px 28px 0 0;
 }
 
 .envelope-pocket {
-  inset: auto 0 0;
-  height: 246px;
+  inset: auto 28px 18px;
+  height: 214px;
   background:
     linear-gradient(180deg, rgba(249, 244, 232, 0.98), rgba(240, 229, 205, 0.98));
-  border: 1px solid rgba(203, 180, 119, 0.44);
+  border: 2px solid rgba(203, 180, 119, 0.48);
   box-shadow: var(--shadow);
   overflow: hidden;
   z-index: 3;
@@ -378,31 +378,31 @@ body.opener-body .backdrop-illustration::after {
 .envelope-pocket-inner {
   position: absolute;
   left: 50%;
-  bottom: 56px;
+  bottom: 72px;
   z-index: 3;
-  width: 78%;
-  height: 34px;
+  width: 64%;
+  height: 18px;
   transform: translateX(-50%);
-  border-radius: 18px;
+  border-radius: 999px;
   background: linear-gradient(180deg, rgba(231, 220, 188, 0.9), rgba(247, 239, 220, 0.4));
-  opacity: 0.45;
+  opacity: 0.32;
 }
 
 .amp-badge {
   position: absolute;
   left: 50%;
-  bottom: 28px;
+  bottom: 66px;
   z-index: 5;
-  width: 72px;
-  height: 72px;
+  width: 82px;
+  height: 82px;
   display: grid;
   place-items: center;
   transform: translateX(-50%);
-  border-radius: 20px;
+  border-radius: 50%;
   background: linear-gradient(180deg, #a7d0db, #89b9c8);
   color: #9b7445;
   font-family: var(--name-font);
-  font-size: 2.6rem;
+  font-size: 2.8rem;
   font-style: italic;
   box-shadow: 0 10px 24px rgba(74, 122, 143, 0.16);
   transition: transform 0.7s ease, opacity 0.7s ease;
@@ -424,19 +424,19 @@ body.opener-body .backdrop-illustration::after {
 }
 
 .opener-floral-one {
-  top: 42px;
-  left: 30px;
+  top: 58px;
+  left: 34px;
 }
 
 .opener-floral-two {
-  right: 30px;
-  bottom: 120px;
+  right: 36px;
+  bottom: 150px;
   animation-delay: 0.8s;
 }
 
 .opener-floral-three {
-  top: 122px;
-  right: 28px;
+  top: 146px;
+  right: 42px;
   animation-delay: 1.6s;
 }
 
@@ -463,13 +463,13 @@ body.invitation-opening .envelope-lid {
 }
 
 body.invitation-opening .envelope-letter {
-  transform: translateY(-152px) scale(1.02);
+  transform: translateY(-118px) scale(1.01);
   filter: drop-shadow(0 18px 26px rgba(130, 104, 35, 0.12));
 }
 
 body.invitation-opening .amp-badge {
   opacity: 0;
-  transform: translateX(-50%) translateY(-18px) scale(0.72);
+  transform: translateX(-50%) translateY(-12px) scale(0.72);
 }
 
 body.invitation-opening .envelope-shadow {
@@ -934,15 +934,15 @@ body.invitation-opening .envelope-shadow {
   }
 
   .envelope-compact {
-    height: 360px;
+    height: 388px;
   }
 
   .envelope-letter {
-    inset: 30px 56px 70px;
+    inset: 18px 72px 96px;
   }
 
   .letter-copy strong {
-    font-size: clamp(3rem, 13vw, 4.4rem);
+    font-size: clamp(2.8rem, 12vw, 4rem);
   }
 
   .letter-copy em {
@@ -950,18 +950,20 @@ body.invitation-opening .envelope-shadow {
   }
 
   .envelope-lid-compact {
-    height: 168px;
+    inset: 16px 18px auto;
+    height: 148px;
   }
 
   .envelope-pocket {
-    height: 204px;
+    inset: auto 18px 12px;
+    height: 178px;
   }
 
   .amp-badge {
-    width: 60px;
-    height: 60px;
-    bottom: 18px;
-    font-size: 2.2rem;
+    width: 64px;
+    height: 64px;
+    bottom: 54px;
+    font-size: 2.1rem;
   }
 
   .opener-prompt {
