@@ -563,6 +563,10 @@ body.invitation-opening .envelope-shadow {
   font-size: clamp(1.25rem, 2vw, 1.95rem);
 }
 
+.hero-place-line {
+  white-space: nowrap;
+}
+
 .section-head {
   max-width: 760px;
   margin: 0 auto 26px;
@@ -1003,6 +1007,10 @@ body.invitation-opening .envelope-shadow {
     margin: 0 auto;
     font-size: clamp(1rem, 4.7vw, 1.32rem);
     line-height: 1.45;
+  }
+
+  .hero-place-line {
+    display: inline-block;
   }
 
   .location-stage .section-head {
