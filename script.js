@@ -40,7 +40,7 @@ function startEnvelopeSequence() {
 
   window.setTimeout(() => {
     window.location.href = "invitation.html?opened=1";
-  }, 1850);
+  }, 2150);
 }
 
 function setupRevealObserver() {
