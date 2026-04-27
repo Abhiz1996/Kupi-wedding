@@ -1,4 +1,3 @@
-const openInvitationButton = document.querySelector("#openInvitationButton");
 const openInvitationCta = document.querySelector("#openInvitationCta");
 const countdownGrid = document.querySelector("#countdownGrid");
 const revealTargets = document.querySelectorAll(".reveal");
@@ -28,7 +27,7 @@ function updateCountdown() {
 }
 
 function startEnvelopeSequence() {
-  if (!openInvitationButton && !openInvitationCta) {
+  if (!openInvitationCta) {
     return;
   }
 
@@ -78,7 +77,6 @@ function createPetals() {
   }
 }
 
-openInvitationButton?.addEventListener("click", startEnvelopeSequence);
 openInvitationCta?.addEventListener("click", startEnvelopeSequence);
 
 updateCountdown();
