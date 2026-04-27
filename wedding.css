@@ -875,6 +875,33 @@ body.invitation-opening .envelope-shadow {
 }
 
 @media (max-width: 720px) {
+  .hero-card-stage {
+    padding-top: 24px;
+  }
+
+  .ornament-bar {
+    width: min(100%, 292px);
+    height: 52px;
+    margin: 0 auto -8px;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+  }
+
+  .ornament-bar::before,
+  .ornament-bar::after {
+    top: 17px;
+    width: 14px;
+    height: 14px;
+  }
+
+  .ornament-bar::before {
+    left: 16px;
+  }
+
+  .ornament-bar::after {
+    right: 16px;
+  }
+
   .section-head h3,
   .reception-block h4 {
     font-size: clamp(2.6rem, 13vw, 4.1rem);
@@ -934,6 +961,48 @@ body.invitation-opening .envelope-shadow {
   .closing-note {
     padding-left: 18px;
     padding-right: 18px;
+  }
+
+  .hero-card {
+    padding-top: 26px;
+    padding-bottom: 26px;
+  }
+
+  .arched-card {
+    padding: 56px 24px 48px;
+    border-radius: 220px 220px 88px 88px;
+  }
+
+  .arch-rings {
+    inset: 12px;
+    border-radius: 206px 206px 74px 74px;
+  }
+
+  .invite-line {
+    max-width: 16ch;
+    margin: 0 auto;
+    font-size: 0.95rem;
+    line-height: 1.45;
+  }
+
+  .hero-card h2 {
+    gap: 0;
+    margin-top: 18px;
+    font-size: clamp(3.15rem, 11vw, 4.2rem);
+    line-height: 0.95;
+  }
+
+  .hero-date {
+    margin: 22px 0 10px;
+    font-size: clamp(1.08rem, 5vw, 1.5rem);
+    line-height: 1.4;
+  }
+
+  .hero-place {
+    max-width: 15ch;
+    margin: 0 auto;
+    font-size: clamp(1rem, 4.7vw, 1.32rem);
+    line-height: 1.45;
   }
 
   .location-stage .section-head {
