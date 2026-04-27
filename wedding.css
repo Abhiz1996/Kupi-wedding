@@ -759,6 +759,7 @@ body.invitation-opening .envelope-shadow {
 .venue-card h4 {
   font-size: clamp(2.6rem, 5vw, 4rem);
   line-height: 0.95;
+  white-space: nowrap;
 }
 
 .venue-copy p {
@@ -798,6 +799,7 @@ body.invitation-opening .envelope-shadow {
 .closing-note h4 {
   font-size: clamp(2.6rem, 5vw, 4.4rem);
   margin-bottom: 18px;
+  white-space: nowrap;
 }
 
 .closing-note p {
@@ -852,6 +854,7 @@ body.invitation-opening .envelope-shadow {
 
   .location-grid {
     grid-template-columns: 1fr;
+    gap: 18px;
   }
 
   .countdown-grid {
@@ -927,6 +930,44 @@ body.invitation-opening .envelope-shadow {
   .closing-note {
     padding-left: 18px;
     padding-right: 18px;
+  }
+
+  .location-stage .section-head {
+    margin-bottom: 18px;
+  }
+
+  .map-card {
+    min-height: 240px;
+    border-radius: 24px;
+  }
+
+  .map-card iframe {
+    height: 240px;
+  }
+
+  .venue-card {
+    gap: 14px;
+    padding: 24px 18px;
+    border-radius: 24px;
+  }
+
+  .venue-card h4 {
+    font-size: clamp(2rem, 9vw, 2.9rem);
+    white-space: normal;
+  }
+
+  .venue-copy p {
+    font-size: 1.18rem;
+    line-height: 1.5;
+  }
+
+  .calendar-button {
+    min-height: 58px;
+    font-size: 1.45rem;
+  }
+
+  .closing-note h4 {
+    font-size: clamp(2rem, 8vw, 2.8rem);
   }
 
   .reception-date-pill {
