@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Mea+Culpa&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Mea+Culpa&display=swap"
       rel="stylesheet"
     >
     <link rel="stylesheet" href="wedding.css">
@@ -27,24 +27,25 @@
     <main class="opener-main">
       <section class="opening-envelope-stage" id="home">
         <div class="opening-shell reveal">
-          <p class="eyebrow">Wedding Invitation</p>
-          <h1 class="opener-title">Open the invitation</h1>
-          <p class="intro-copy opener-copy">
-            Tap the envelope and let the card unfold before the celebration begins.
-          </p>
-
-          <button type="button" class="envelope-scene" id="openInvitationButton" aria-expanded="false">
+          <button
+            type="button"
+            class="envelope-scene envelope-scene-reference"
+            id="openInvitationButton"
+            aria-expanded="false"
+          >
             <span class="envelope-shadow opener-shadow" aria-hidden="true"></span>
             <span class="opener-envelope-card">
-              <span class="opener-spark opener-spark-one" aria-hidden="true"></span>
-              <span class="opener-spark opener-spark-two" aria-hidden="true"></span>
-              <span class="opener-spark opener-spark-three" aria-hidden="true"></span>
+              <span class="opener-floral opener-floral-one" aria-hidden="true"></span>
+              <span class="opener-floral opener-floral-two" aria-hidden="true"></span>
+              <span class="opener-floral opener-floral-three" aria-hidden="true"></span>
               <span class="envelope envelope-compact">
                 <span class="envelope-letter envelope-letter-compact">
                   <span class="letter-frame letter-frame-compact">
-                    <span class="eyebrow eyebrow-compact">Sacred Union</span>
+                    <span class="eyebrow eyebrow-compact">Wedding Invitation</span>
                     <span class="letter-copy letter-copy-compact">
-                      <span class="invite-line">Invite you to celebrate their marriage</span>
+                      <span class="invite-line invite-line-compact">
+                        Invite you to celebrate their marriage
+                      </span>
                       <strong>Dr. Anand</strong>
                       <em>&amp;</em>
                       <strong>Dr. Gopika</strong>
@@ -53,16 +54,15 @@
                 </span>
                 <span class="envelope-lid envelope-lid-compact" aria-hidden="true"></span>
                 <span class="envelope-pocket envelope-pocket-compact" aria-hidden="true"></span>
-                <span class="opener-dots" aria-hidden="true">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </span>
-                <span class="wax-seal wax-seal-compact">Open Invitation</span>
+                <span class="amp-badge" aria-hidden="true">&amp;</span>
               </span>
             </span>
           </button>
 
+          <p class="opener-prompt">Tap below to view your invitation</p>
+          <button type="button" class="primary-cta opener-button" id="openInvitationCta">
+            Open Invitation
+          </button>
           <a class="skip-link" href="invitation.html">Skip Animation</a>
         </div>
       </section>
