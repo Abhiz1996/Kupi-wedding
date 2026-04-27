@@ -754,12 +754,14 @@ body.invitation-opening .envelope-shadow {
   align-content: start;
   gap: 18px;
   padding: 34px 36px;
+  text-align: left;
 }
 
 .venue-card h4 {
-  font-size: clamp(2.6rem, 5vw, 4rem);
-  line-height: 0.95;
-  white-space: nowrap;
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  line-height: 1.02;
+  white-space: normal;
+  max-width: 12ch;
 }
 
 .venue-copy p {
@@ -797,7 +799,7 @@ body.invitation-opening .envelope-shadow {
 }
 
 .closing-note h4 {
-  font-size: clamp(2.6rem, 5vw, 4.4rem);
+  font-size: clamp(2.3rem, 4.2vw, 4rem);
   margin-bottom: 18px;
   white-space: nowrap;
 }
@@ -805,7 +807,9 @@ body.invitation-opening .envelope-shadow {
 .closing-note p {
   margin: 0;
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  max-width: 28ch;
+  margin-inline: auto;
+  font-size: clamp(1.15rem, 1.7vw, 1.55rem);
   line-height: 1.9;
 }
 
@@ -952,8 +956,9 @@ body.invitation-opening .envelope-shadow {
   }
 
   .venue-card h4 {
-    font-size: clamp(2rem, 9vw, 2.9rem);
+    font-size: clamp(2rem, 9vw, 2.7rem);
     white-space: normal;
+    max-width: none;
   }
 
   .venue-copy p {
@@ -967,7 +972,8 @@ body.invitation-opening .envelope-shadow {
   }
 
   .closing-note h4 {
-    font-size: clamp(2rem, 8vw, 2.8rem);
+    font-size: clamp(1.9rem, 8vw, 2.6rem);
+    white-space: normal;
   }
 
   .reception-date-pill {

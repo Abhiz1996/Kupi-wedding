@@ -87,47 +87,21 @@ button {
 
 .opener-title {
   margin: 0;
-  color: #fff7df;
+  color: var(--gold);
   font-family: "Cormorant Garamond", serif;
-  font-size: 0.98rem;
-  font-weight: 700;
-  letter-spacing: 0.28em;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  padding: 18px 36px;
-  border-radius: 0 0 24px 24px;
-  background: linear-gradient(180deg, #e0c987, #a47f31);
-  box-shadow: 0 14px 32px rgba(145, 119, 49, 0.18);
-  position: relative;
-  z-index: 2;
-}
-
-.opener-title::before,
-.opener-title::after {
-  content: "";
-  position: absolute;
-  top: 18px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: #f4e6b1;
-  box-shadow: inset 0 0 0 4px rgba(143, 108, 38, 0.6);
-}
-
-.opener-title::before {
-  left: 18px;
-}
-
-.opener-title::after {
-  right: 18px;
 }
 
 .opener-names {
   display: grid;
   gap: 10px;
   justify-items: center;
-  width: min(100%, 760px);
+  width: min(100%, 700px);
   padding: 86px 40px 74px;
-  margin-top: -10px;
+  margin-top: 0;
   border-radius: 44px;
   border: 1px solid var(--line);
   background: linear-gradient(180deg, rgba(248, 247, 224, 0.68), rgba(239, 246, 224, 0.62));
@@ -177,8 +151,9 @@ button {
   margin: 0;
   color: var(--muted);
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.75rem;
+  font-size: 1.55rem;
   font-weight: 500;
+  line-height: 1.4;
 }
 
 .primary-cta {
@@ -236,11 +211,11 @@ body.invitation-opening .envelope-lid {
 
   .opener-title {
     font-size: 0.82rem;
-    letter-spacing: 0.24em;
-    padding: 16px 28px;
+    letter-spacing: 0.12em;
   }
 
   .opener-names {
+    width: min(100%, 520px);
     padding: 66px 18px 52px;
   }
 
@@ -263,7 +238,7 @@ body.invitation-opening .envelope-lid {
   }
 
   .opener-prompt {
-    font-size: 1.28rem;
+    font-size: 1.18rem;
   }
 
   .opener-button {
