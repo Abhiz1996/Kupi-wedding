@@ -14,32 +14,40 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap"
       rel="stylesheet"
     >
-    <link rel="stylesheet" href="wedding.css">
+    <link rel="stylesheet" href="opener.css">
   </head>
-  <body class="invitation-body opener-body">
+  <body class="opener-body">
     <div class="petal-layer" aria-hidden="true" id="petalLayer"></div>
     <div class="backdrop-illustration" aria-hidden="true"></div>
 
     <main class="opener-main">
       <section class="opening-envelope-stage" id="home">
-        <div class="opening-shell opener-v2 reveal">
-          <div class="envelope-v2" aria-hidden="true">
-            <span class="envelope-v2__shadow" aria-hidden="true"></span>
-            <span class="envelope-v2__body" aria-hidden="true"></span>
-            <span class="envelope-v2__letter" aria-hidden="true">
-              <span class="envelope-v2__paper">
-                <span class="envelope-v2__eyebrow">Wedding Invitation</span>
-                <span class="envelope-v2__name">Anand</span>
-                <span class="envelope-v2__ampersand">&amp;</span>
-                <span class="envelope-v2__name">Gopika</span>
+        <div class="opening-shell reveal">
+          <p class="opener-title">Wedding Invitation</p>
+
+          <button
+            type="button"
+            class="envelope-scene"
+            id="openInvitationButton"
+            aria-expanded="false"
+            aria-label="Open invitation envelope"
+          >
+            <span class="envelope-shadow" aria-hidden="true"></span>
+            <span class="envelope">
+              <span class="envelope-lid" aria-hidden="true"></span>
+              <span class="envelope-letter">
+                <span class="letter-frame">
+                  <span class="letter-copy">
+                    <strong>Anand</strong>
+                    <em>&amp;</em>
+                    <strong>Gopika</strong>
+                  </span>
+                </span>
               </span>
+              <span class="envelope-pocket" aria-hidden="true"></span>
+              <span class="wax-seal" aria-hidden="true">&amp;</span>
             </span>
-            <span class="envelope-v2__flap" aria-hidden="true"></span>
-            <span class="envelope-v2__front" aria-hidden="true"></span>
-            <span class="envelope-v2__front-left" aria-hidden="true"></span>
-            <span class="envelope-v2__front-right" aria-hidden="true"></span>
-            <span class="envelope-v2__seal" aria-hidden="true">&amp;</span>
-          </div>
+          </button>
 
           <p class="opener-prompt">Tap below to view your invitation</p>
           <button type="button" class="primary-cta opener-button" id="openInvitationCta">
