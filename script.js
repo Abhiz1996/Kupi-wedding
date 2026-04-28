@@ -2,6 +2,7 @@ const openInvitationCta = document.querySelector("#openInvitationCta");
 const countdownGrid = document.querySelector("#countdownGrid");
 const revealTargets = document.querySelectorAll(".reveal");
 const petalLayer = document.querySelector("#petalLayer");
+const invitationHref = "invitation.html?opened=1";
 
 const weddingDate = new Date("2026-06-17T10:00:00+05:30");
 
@@ -35,8 +36,19 @@ function startEnvelopeSequence() {
   document.body.classList.add("invitation-opening");
 
   window.setTimeout(() => {
-    window.location.href = "invitation.html?opened=1";
-  }, 1350);
+    window.location.href = invitationHref;
+  }, 700);
+}
+
+function warmInvitationPage() {
+  if (document.querySelector(`link[rel="prefetch"][href="${invitationHref}"]`)) {
+    return;
+  }
+
+  const preload = document.createElement("link");
+  preload.rel = "prefetch";
+  preload.href = invitationHref;
+  document.head.append(preload);
 }
 
 function setupRevealObserver() {
@@ -78,6 +90,9 @@ function createPetals() {
   }
 }
 
+openInvitationCta?.addEventListener("pointerenter", warmInvitationPage, { once: true });
+openInvitationCta?.addEventListener("touchstart", warmInvitationPage, { once: true, passive: true });
+openInvitationCta?.addEventListener("focus", warmInvitationPage, { once: true });
 openInvitationCta?.addEventListener("click", startEnvelopeSequence);
 
 updateCountdown();
