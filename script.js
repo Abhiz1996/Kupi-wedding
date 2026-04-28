@@ -31,11 +31,12 @@ function startEnvelopeSequence() {
     return;
   }
 
+  openInvitationCta.disabled = true;
   document.body.classList.add("invitation-opening");
 
   window.setTimeout(() => {
     window.location.href = "invitation.html?opened=1";
-  }, 2150);
+  }, 1350);
 }
 
 function setupRevealObserver() {
