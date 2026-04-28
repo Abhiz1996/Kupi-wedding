@@ -2,6 +2,7 @@ const openInvitationCta = document.querySelector("#openInvitationCta");
 const countdownGrid = document.querySelector("#countdownGrid");
 const revealTargets = document.querySelectorAll(".reveal");
 const petalLayer = document.querySelector("#petalLayer");
+const lazyEmbeds = document.querySelectorAll("iframe[data-src]");
 const invitationHref = "invitation.html?opened=1";
 
 const weddingDate = new Date("2026-06-17T10:00:00+05:30");
@@ -37,18 +38,48 @@ function startEnvelopeSequence() {
 
   window.setTimeout(() => {
     window.location.href = invitationHref;
-  }, 700);
+  }, 320);
 }
 
 function warmInvitationPage() {
   if (document.querySelector(`link[rel="prefetch"][href="${invitationHref}"]`)) {
+    // Continue below to warm the actual document response too.
+  } else {
+    const preload = document.createElement("link");
+    preload.rel = "prefetch";
+    preload.href = invitationHref;
+    document.head.append(preload);
+  }
+
+  fetch(invitationHref, { credentials: "same-origin" }).catch(() => {});
+}
+
+function hydrateLazyEmbeds() {
+  if (!lazyEmbeds.length) {
     return;
   }
 
-  const preload = document.createElement("link");
-  preload.rel = "prefetch";
-  preload.href = invitationHref;
-  document.head.append(preload);
+  const activate = (frame) => {
+    if (frame.dataset.src && !frame.src) {
+      frame.src = frame.dataset.src;
+    }
+  };
+
+  if (!("IntersectionObserver" in window)) {
+    lazyEmbeds.forEach(activate);
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        activate(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: "240px 0px" });
+
+  lazyEmbeds.forEach((frame) => observer.observe(frame));
 }
 
 function setupRevealObserver() {
@@ -99,3 +130,5 @@ updateCountdown();
 window.setInterval(updateCountdown, 1000);
 setupRevealObserver();
 createPetals();
+hydrateLazyEmbeds();
+warmInvitationPage();
